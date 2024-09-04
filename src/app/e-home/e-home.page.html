@@ -1,0 +1,68 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-title>
+      سوق بغداد
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-margin-top">
+    <ion-col size="12" size-sm="12" size-md="12" size-lg="12">
+      <h1>اهلا بك في سوق بغداد </h1>
+      <p>سوق بغداد عبارة عن متجر الكتروني حيث يمكن انت كل ما ترغب </p>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row class="ion-margin-top">
+    <ion-col size="12" size-sm="12" size-md="12" size-lg="12">
+      <ion-item lines="none">
+        <ion-input [ngClass]="search" placeholder="ابحث عن منتج " type="text" [(ngModel)]="inpvalue" (ionInput)="log($event)">
+          <ion-icon name="search" slot="start" style="color: rgba(6, 179, 167, 0.989); font-weight: 600; font-size: 20px;padding-left: 10px;"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <ion-text>{{inpvalue}}</ion-text>
+    </ion-col>
+  </ion-row>
+<ion-row class="ion-margin-top">
+  <ion-col size="12" size-sm="12" size-md="12">
+    <swiper-container (slidechange)="swiperSlideChange($event)" [loop]="true">
+      <swiper-slide *ngFor="let img of imges">
+        <ion-card >
+          <ion-img [src]="img" class="img"></ion-img>
+        </ion-card>
+      </swiper-slide>
+      
+    </swiper-container>
+  </ion-col>
+</ion-row>
+
+
+<ion-row class="ion-margin-top">
+  <ion-col>
+    <div style="display: flex; direction: rtl; ">
+      <h3>يمكنك الان مشاهدة المنتجات </h3>
+      <button  class="products" (click)=" goToProducts()"><ion-icon name="caret-forward-outline" slot="start"></ion-icon> المنتجات</button>
+    </div>
+    
+    <div class="marquee">
+      <p>وشراء كل ما تحتاجه من منتجات و غير ذلك في سوق بغداد</p>
+    </div>
+      
+  </ion-col>
+</ion-row>
+<ion-row class="ion-margin-top">
+  <ion-col>
+    <div style="display: flex; direction: rtl; ">
+      <h3>مقابلة فريق العمل </h3>
+      <button  class="team" (click)=" goToteam()"><ion-icon name="caret-forward-outline" slot="start"></ion-icon> فريق العمل</button>
+    </div>
+  
+     <div class="marquee" >
+      <p>يمكنك التعرف علي فريقنا الان </p>
+     </div>
+  </ion-col>
+</ion-row>
+ 
+</ion-content>

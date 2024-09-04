@@ -1,0 +1,89 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button  defaultHref="/e-home" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>فريق سوق بغداد</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div *ngIf="show">
+    <ion-list lines="none" >
+      <ion-item *ngFor="let item of [1,2,3,4,5]">
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated>item</ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h2><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></h2>
+          <h6><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></h6>
+        </ion-label>
+      </ion-item>
+      
+    </ion-list> 
+  </div>
+
+  <ion-list *ngIf="!show" lines="none">
+    <ion-item-sliding *ngFor="let teamme of teeam">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="teamme.img">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ teamme.name }}</h2>
+          <p>{{ teamme.des}}</p>
+        </ion-label>
+      </ion-item>
+    <ion-item-options>
+  <ion-item-option (click)="aboutdev(teamme)">
+   <p>about</p>
+  </ion-item-option>
+    </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  
+  <ion-row class="ion-margin-top" *ngIf="!show" >
+    <ion-col>
+      <div style="display: flex; direction: rtl; ">
+        <h3>ارسال رسالتك الي  فريق العمل </h3>
+     
+      </div>
+    
+       <div class="marquee" >
+        <p>يمكنك ارسال رسالة الي فريق عمل سوق بغداد و ابداء رايك </p>
+       </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-margin-top" *ngIf="!show">
+    <ion-col size="12" size-sm="12" size-md="12">
+      <ion-item class="ion-margin-top">
+    <ion-img src="../../assets/imgs/send.png"></ion-img>
+      </ion-item>
+     
+    </ion-col>
+    </ion-row>
+
+<ion-row class="ion-margin-top" *ngIf="!show">
+  <ion-col size="12" size-sm="12" size-md="12">
+   <form>
+    <ion-item class="ion-margin-top">
+     
+      <ion-icon name="person" slot="end"></ion-icon>
+    
+    <ion-input placeholder="ادخل اسم المستخدم " ></ion-input>
+  </ion-item>
+  <ion-item class="ion-margin-top">
+    
+    <ion-textarea row="4" autoGrow placeholder="ادخل رسالتك الي سوق " ></ion-textarea>
+  </ion-item>
+   </form>
+    <ion-button expand="block" class="ion-margin-top" (click)="sendMessage()">ارسال 
+      <ion-icon name="send" style="padding-left: 8px;"></ion-icon>
+    </ion-button>
+  </ion-col>
+ 
+</ion-row>
+
+</ion-content>

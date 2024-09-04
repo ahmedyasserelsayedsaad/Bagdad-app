@@ -1,0 +1,85 @@
+ion-header{
+    border: none;
+    box-shadow: none;
+    direction: rtl;
+    ion-toolbar{
+      --background:rgba(0, 255, 238, 0.723);
+    }
+   
+  }
+  ion-title{
+    font-size: 20px;
+    font-family: cursive;
+   color: whitesmoke;
+   font-weight: 600;
+  }
+  
+  ion-content{
+    --background:#f0f0f2;
+  }
+  .title{
+    direction: rtl;
+    margin-top: 30px;
+    
+    padding-right: 20px;
+    color:rgba(6, 179, 167, 0.989);
+    h3{
+      font-size: 30px;
+    font-family: cursive;
+    font-weight: bolder;
+    }
+  }
+  .form{
+    text-align: center;
+    justify-content: center;
+    margin-top: 60px;
+  
+  }
+  
+  ion-item{
+    max-width: 400px;
+    ion-input{
+      font-size: 20px;
+      color: gray;
+    }
+  }
+  ion-button{
+    --background:rgba(6, 179, 168, 0.799);
+    font-size: 20px;
+    font-weight: 700;
+    &:hover {
+      --background: rgba(6, 179, 168, 0.799);
+    }
+    
+    &:active {
+      --background: rgba(6, 179, 168, 0.799);
+    }
+  
+  }
+  ion-input{
+  
+    &:hover{
+      border-radius: 10px;
+      border: 2px solid rgba(6, 179, 168, 0.799) ;
+      transition: 0.2s ease-in-out;
+    }
+  }
+  
+  ion-checkbox{
+    --background: rgba(6, 179, 168, 0.799) ; 
+    --border-color: rgba(6, 179, 168, 0.799) ; 
+    --color-checked: rgba(6, 179, 168, 0.799) ; 
+   
+  }
+  
+ 
+  
+  .error-message {
+    color: red; /* تغيير لون النص إلى الأحمر */
+    font-size: 14px; /* حجم النص */
+    margin-top: 5px; /* إضافة مسافة علوية */
+    padding: 2px; /* إضافة مساحة داخلية */
+    background-color: #f8d7da; /* خلفية فاتحة */
+    border: 1px solid #f5c6cb; /* إضافة حدود خفيفة */
+    border-radius: 3px; /* تدوير الزوايا قليلاً */
+  }

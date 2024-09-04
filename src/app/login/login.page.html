@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar  class="ion-no-border">
+    <ion-title>
+      سوق بغداد
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+ <div class="form">
+  <div class="title">
+    <h3 >تسجيل الدخول علي متجرنا</h3>
+   </div>
+  <form  [formGroup]="form">
+ <ion-list lines="none">
+<ion-item class="ion-margin-bottom">
+  
+  <ion-icon name="mail-outline" slot="start" ></ion-icon>
+  <ion-input placeholder="enter your email address" type="email" clearOnEdit formControlName="email"></ion-input>
+
+</ion-item>
+<div *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched" class="error-message">
+  This emaill address is required
+</div>
+<ion-item class="ion-margin-bottom">
+  
+  <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+  <ion-input placeholder="enter your password" type="password" clearOnEdit formControlName="password"></ion-input>
+
+</ion-item>
+<div *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched" class="error-message">
+  This password is required
+</div>
+
+
+<ion-item class="ion-margin-bottom">
+  
+<ion-checkbox slot="start">
+  <ion-label style="font-size: 19px;">remember me</ion-label>
+</ion-checkbox>
+
+</ion-item>
+ </ion-list>
+  </form>
+  <ion-button expand="block" mode="ios" shape="round" [disabled]="form.invalid" (click)="register()"> تسجيل دخول</ion-button>
+
+  <p>ليس لدي حساب في  متجر بغداد <span style="color: red;" routerLink="/home">انشاء حساب</span></p>
+ </div>
+</ion-content>

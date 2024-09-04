@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/products"></ion-back-button>
+    </ion-buttons>
+    <ion-title> سوق بغداد</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-row class="ion-margin-top" *ngFor="let item of deet">
+    <ion-col size="12" class="justify-content-center,align-items-center">
+      <ion-item lines="none">
+        <img src="{{item.image}}" alt="" srcset="">
+      </ion-item>
+    </ion-col>
+    <div class="stars">
+      <h3><ion-icon [ngClass]="rate" name="star"></ion-icon></h3>
+      <h3><ion-icon [ngClass]="rate" name="star"></ion-icon></h3>
+      <h3><ion-icon [ngClass]="rate" name="star"></ion-icon></h3>
+      <h3><ion-icon [ngClass]="rate" name="star"></ion-icon></h3>
+      <h3><ion-icon [ngClass]="rate" name="star-half"></ion-icon></h3>
+    </div>
+    <h4 [ngClass]="h3">{{item.title}}</h4>
+    <h4 [ngClass]="h4">{{item.category}}</h4>
+    <h4 [ngClass]="h4">{{item.price|currency}}</h4>
+    <p [ngClass]="p">{{item.description}}</p>
+  </ion-row>
+</ion-content>

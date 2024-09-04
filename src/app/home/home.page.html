@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar  class="ion-no-border">
+    <ion-title>
+      سوق بغداد
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+ <div class="form">
+  <div class="title">
+    <h3 >انشاء حساب علي متجرنا</h3>
+   </div>
+  <form  [formGroup]="form">
+ <ion-list lines="none">
+  <ion-item class="ion-margin-bottom">
+  
+
+  <ion-icon name="person-outline" slot="start" position="floating"></ion-icon>
+      <ion-input placeholder="enter your name" type="text"clearOnEdit  formControlName="userName"></ion-input>
+ 
+  </ion-item> 
+    <div *ngIf="form.get('userName')?.hasError('required') && form.get('userName')?.touched " class="error-message">
+      This input is required
+    </div>
+  <ion-item class="ion-margin-bottom">
+    <ion-icon name="call-outline" slot="start" position="floating"></ion-icon>
+    <ion-input placeholder="enter your phone" type="text" clearOnEdit formControlName="phone"></ion-input>
+</ion-item>
+<div *ngIf="form.get('phone')?.hasError('required') && form.get('phone')?.touched" class="error-message">
+  This phone number is required
+</div>
+<ion-item class="ion-margin-bottom">
+  
+  <ion-icon name="mail-outline" slot="start" ></ion-icon>
+  <ion-input placeholder="enter your email address" type="email" clearOnEdit formControlName="email"></ion-input>
+
+</ion-item>
+<div *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched" class="error-message">
+  This emaill address is required
+</div>
+<ion-item class="ion-margin-bottom">
+  
+  <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+  <ion-input placeholder="enter your password" type="password" clearOnEdit formControlName="password"></ion-input>
+
+</ion-item>
+<div *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched" class="error-message">
+  This password is required
+</div>
+
+
+<ion-item class="ion-margin-bottom">
+  
+<ion-checkbox slot="start">
+  <ion-label style="font-size: 19px;">remember me</ion-label>
+</ion-checkbox>
+
+</ion-item>
+<ion-radio-group>
+  <ion-item>
+    <ion-label>male</ion-label>
+    <ion-radio value="male" slot="start"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>female</ion-label>
+    <ion-radio value="female" slot="start"></ion-radio>
+  </ion-item>
+</ion-radio-group>
+ </ion-list>
+  </form>
+  <ion-button expand="block"mode="ios" shape="round" [disabled]="form.invalid" (click)="register()">انشاء حساب</ion-button>
+  <p>لدي حساب بالفعل في  متجر بغداد <span style="color: red;" routerLink="/login">تسجيل دخول</span></p>
+ </div>
+</ion-content>

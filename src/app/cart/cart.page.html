@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+     
+      <ion-back-button defaultHref="/products"></ion-back-button>
+     
+    </ion-buttons>
+    <ion-title>عربة التسوق </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+  <div *ngIf="show">
+    <ion-list lines="none" >
+      <ion-item *ngFor="let item of [1,2,3,4,5]">
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated>item</ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h2><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></h2>
+          <h6><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></h6>
+        </ion-label>
+      </ion-item>
+      
+    </ion-list> 
+  </div>
+
+
+  <ion-list lines="none" *ngIf="!show">
+    <ion-item *ngFor="let item of cartItems">
+      <ion-thumbnail slot="start">
+        <img [src]="item.image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.price | currency }} × {{ item.counterValue }}</p>
+      </ion-label>
+      <button (click)="removeFromCart(item)" slot="end" style="background-color: white;">
+        <ion-icon name="trash" slot="icon-only" style="font-size: 30px; color: rgba(10, 186, 175, 0.849);"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
+  <ion-footer *ngIf="!show">
+    <ion-toolbar>
+      <ion-title>
+        <h3>الإجمالي:{{ getTotal() | currency }}</h3>
+        </ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
+
+
